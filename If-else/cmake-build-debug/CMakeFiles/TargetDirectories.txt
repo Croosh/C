@@ -1,0 +1,3 @@
+S:/Code/C++/If-else/cmake-build-debug/CMakeFiles/If_else.dir
+S:/Code/C++/If-else/cmake-build-debug/CMakeFiles/edit_cache.dir
+S:/Code/C++/If-else/cmake-build-debug/CMakeFiles/rebuild_cache.dir
