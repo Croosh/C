@@ -1,0 +1,3 @@
+S:/Code/C++/Gambling/cmake-build-debug/CMakeFiles/Gambling.dir
+S:/Code/C++/Gambling/cmake-build-debug/CMakeFiles/edit_cache.dir
+S:/Code/C++/Gambling/cmake-build-debug/CMakeFiles/rebuild_cache.dir
