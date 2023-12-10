@@ -6,7 +6,7 @@ using namespace std;
 // Function to generate a random choice for computer
 string computer_choice() {
     int computer_move;
-    srand(time(NULL));
+    srand(time(nullptr));
     computer_move = rand() % 3;
 
     if (computer_move == 0) {
@@ -18,19 +18,17 @@ string computer_choice() {
 }
 
 // Choice Comparison Function
-int choice_comparison(string player_choice, string computer_choice) {
-    if (player_choice == "Paper" && computer_choice == "Rock") {
+int choice_comparison(const string& player_choice, const string& computer_choice) {
+    if ((player_choice == "Paper" && computer_choice == "Rock") ||
+        (player_choice == "Scissors" && computer_choice == "Paper") ||
+        (player_choice == "Rock" && computer_choice == "Scissors")) {
         return 1;
-    } else if (player_choice == "Scissors" && computer_choice == "Paper") {
-        return 1;
-    } else if (player_choice == "Rock" && computer_choice == "Scissors") {
-        return 1;
-    } else if (player_choice == "Rock" && computer_choice == "Paper") {
+    } else
+
+    if ((player_choice == "Rock" && computer_choice == "Paper") ||
+        (player_choice == "Paper" && computer_choice == "Scissors") ||
+        (player_choice == "Scissors" && computer_choice == "Rock")) {
         return -1;
-    } else if (player_choice == "Paper" && computer_choice == "Scissors") {
-        return -1;
-    } else if (player_choice == "Scissors" && computer_choice == "Rock") {
-        return 1;
     } else {
         return 0;
     }
@@ -44,17 +42,18 @@ string player_choice_selection(int player_input) {
     } else {
         return "Scissors";
     }
-};
+}
 
 int main() {
     // Start of the program.
-    cout << "Welcome to Stone Paper Scissor Game!" << endl;
+    cout << "\t\t\t\tWelcome to Paper Scissor Game!" << endl;
+    // Player Scores
     int score = 0;
     do {
-        // Player Scores
+
 
         // Player Choice
-        cout << "Score: " << score << endl;
+        cout << "\tScore: " << score << endl;
         cout << "Select an option or type 'Quit' to exit:" << endl <<
              "1. Rock" << endl <<
              "2. Paper" << endl <<
@@ -64,7 +63,7 @@ int main() {
         cin >> input;
 
         // Check if user wants to quit
-        if (input.compare("Quit") == 0) {
+        if (input == "Quit" || input == "quit") {
             break;
         }
 
@@ -76,6 +75,8 @@ int main() {
             cout << "Invalid input. Please enter a number between 1 and 3." << endl;
             continue;
         }
+
+        system("cls");
 
         string player_choice = player_choice_selection(player_input);
         cout << "Player: " << player_choice << endl;
@@ -96,12 +97,14 @@ int main() {
         } else {
             cout << "It was a draw." << endl;
         }
+
+        cout << "Score: " << score << endl;
         cout << "Play again? (Y/N): ";
         string answer;
         cin >> answer;
 
         // Check answer and break the loop if user says no
-        if (answer.compare("N") == 0 || answer.compare("n") == 0) {
+        if (answer == "N" || answer=="n") {
             break;
         }
         system("cls");
