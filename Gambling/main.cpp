@@ -50,14 +50,12 @@ int main() {
     // Player Scores
     int score = 0;
     do {
-
-
         // Player Choice
-        cout << "\tScore: " << score << endl;
-        cout << "Select an option or type 'Quit' to exit:" << endl <<
-             "1. Rock" << endl <<
-             "2. Paper" << endl <<
-             "3. Scissors" << endl;
+        cout << "Score: " << score << endl;
+        cout <<endl<< "Select an option or type 'Quit' to exit:" << endl<<
+             "\t1. Rock" << endl <<
+             "\t2. Paper" << endl <<
+             "\t3. Scissors" << endl;
 
         string input;
         cin >> input;
@@ -93,7 +91,12 @@ int main() {
             score++;
         } else if (result == -1) {
             cout << "You lost." << endl;
-            score--;
+            if(score > 0){
+                score--;
+            }
+            else{
+                continue;
+            }
         } else {
             cout << "It was a draw." << endl;
         }
@@ -102,7 +105,7 @@ int main() {
         cout << "Play again? (Y/N): ";
         string answer;
         cin >> answer;
-
+        system("cls");
         // Check answer and break the loop if user says no
         if (answer == "N" || answer=="n") {
             break;
